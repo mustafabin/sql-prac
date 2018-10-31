@@ -28,13 +28,23 @@ Take a few minutes to research the other rows.
 
 ## Load The Schema
 
-Load the schema into your database from the command line...
+There are two ways to execute a sql file using psql.
+
+* Using your normal shell
 
 ```bash
 $ psql -d library < schema.sql
 ```
 
-> This command is also run from your Bash prompt -- not inside `psql`
+* Or from inside the psql cli
+
+```sql
+-- first cd to the directory where the file is
+-- then launch the psql cli and connect to the right db
+$ psql -d library
+-- execute using \i and the filename
+\i schema.sql
+```
 
 ## Loading A Seed File
 
@@ -44,6 +54,13 @@ Load that in so we can practice interacting with our data. Make sure to also loo
 
 ```bash
 $ psql -d library < seed.sql
+```
+
+Or:
+
+```sql
+$ psql -d library
+\i seed.sql
 ```
 
 ## Performing CRUD actions with SQL
@@ -113,3 +130,5 @@ There are two exercises:
 
 - [Basic Queries](basic_queries.sql) - SELECT, INSERT, UPDATE, DELETE
 - [Advanced Queries](advanced_queries.sql) - JOINS
+
+You can run these exercises in the same way that you loaded the schema and seed files.
