@@ -78,7 +78,7 @@ First, enter into the library DB...
 
 ```bash
 $ psql
-$ \c library
+# \c library
 ```
 
 ### INSERT
